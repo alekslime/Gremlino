@@ -1,60 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    <title>Gremlino</title>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gremlino</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-<div class="app">
+  <!-- LEFT PANEL: header + ASCII art -->
+  <div class="left-panel">
+    <div class="header-box">
+      <div class="header-title">GREMLINO</div>
+      <div class="header-version">v0.1.0</div>
+      <div class="header-sub">&gt; tiny gremlin living in your computer</div>
+    </div>
 
-    <main class="chat-container">
+    <div class="ascii-art" aria-hidden="true">
+<pre>
+  ....::::::::::....
+  :::  .::::::.  :::
+  ::  ::::::::::.  ::
+ .:  ::::  :::::.  :.
+ :.  :::    :::::  .:
+ ::  ::::  :::::   ::
+  :   :::::::::::. :
+  ::   .::::::::.  :
+   :::.  ......  .::
+    ::::::::::::::::
+     ::          ::
+    ::::        ::::
+   ::::::      ::::::
+  ::::::::    ::::::::
+ .:::::::::  :::::::::
+ .::: ::::::::::::::::
+  ::   :::::::::::::.
+   ::.   :::::::::.
+     ::::.  ....:::
+       ::::::::::::
+        .:::::::.
+          .::::.
+           ::::
+            ::
+</pre>
+    </div>
+  </div>
 
-        <div id="welcome">
+  <!-- RIGHT PANEL: system status + chat -->
+  <div class="right-panel">
 
-            <h1>👹 Gremlino</h1>
+    <!-- System status (top right) -->
+    <div class="system-status" id="system-status">
+      <div class="status-title">-- SYSTEM STATUS ----+</div>
+      <div class="status-row"><span class="status-key">CPU</span><span class="status-val" id="stat-cpu">--</span></div>
+      <div class="status-row"><span class="status-key">RAM</span><span class="status-val" id="stat-ram">--</span></div>
+      <div class="status-row"><span class="status-key">MODEL</span><span class="status-val" id="stat-model">llama3.2:3b</span></div>
+      <div class="status-row"><span class="status-key">UPTIME</span><span class="status-val" id="stat-uptime">--</span></div>
+    </div>
 
-            <p>
-                A tiny gremlin living inside your machine.
-            </p>
+    <!-- Chat messages -->
+    <div class="chat-box" id="chat-box"></div>
 
-        </div>
+    <!-- Input bar -->
+    <div class="input-bar">
+      <span class="prompt-caret">&gt;</span>
+      <textarea id="prompt" placeholder="ask gremlino anything..." rows="1"></textarea>
+      <button id="send-btn" onclick="sendMessage()">&#x2192;</button>
+    </div>
 
-        <div
-            id="messages"
-            class="messages"
-        ></div>
-
-        <div class="input-wrapper">
-
-            <textarea
-                id="prompt"
-                placeholder="Message Gremlino..."
-            ></textarea>
-
-            <button onclick="sendMessage()">
-                ➜
-            </button>
-
-        </div>
-
-    </main>
-
-</div>
+  </div>
 
 <script src="js/chat.js"></script>
-
 </body>
 </html>
