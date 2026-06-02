@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Gremlino</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
 </head>
+
 <body>
 
-<h1>Gremlino</h1>
+<div class="app">
 
-<textarea id="prompt"></textarea>
+    <main class="chat-container">
 
-<button onclick="sendMessage()">
-    Send
-</button>
+        <div id="welcome">
 
-<pre id="response"></pre>
+            <h1>👹 Gremlino</h1>
+
+            <p>
+                A tiny gremlin living inside your machine.
+            </p>
+
+        </div>
+
+        <div
+            id="messages"
+            class="messages"
+        ></div>
+
+        <div class="input-wrapper">
+
+            <textarea
+                id="prompt"
+                placeholder="Message Gremlino..."
+            ></textarea>
+
+            <button onclick="sendMessage()">
+                ➜
+            </button>
+
+        </div>
+
+    </main>
+
+</div>
 
 <script src="js/chat.js"></script>
 
