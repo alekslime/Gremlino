@@ -4,6 +4,7 @@ import os
 
 from routes.chat import chat_bp
 from routes.system import system_bp
+from routes.sessions import sessions_bp
 
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), '..', 'frontend')
 
@@ -12,6 +13,7 @@ CORS(app)
 
 app.register_blueprint(chat_bp)
 app.register_blueprint(system_bp)
+app.register_blueprint(sessions_bp)
 
 @app.route('/')
 def index():

@@ -13,17 +13,20 @@
     <div class="header-box">
       <div class="header-top">
         <span class="header-title">GREMLINO</span>
-        <span class="header-version">v0.1.0</span>
+        <span class="header-version">v0.2.0</span>
       </div>
       <div class="header-rule">|</div>
       <div class="header-sub">&gt; tiny gremlin living in your computer</div>
     </div>
-    <!-- sidebar/services will go here -->
+
+    <div class="sidebar-section">
+      <button id="new-chat-btn" class="new-chat-btn">+ new chat</button>
+      <div id="session-list" class="session-list"></div>
+    </div>
   </div>
 
   <div class="right-panel">
 
-    <!-- Big faded gremlin watermark on chat background -->
     <div class="chat-watermark" aria-hidden="true"><pre>
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀
@@ -46,8 +49,6 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠤⢇⠀⠀⠀⠀⢰⠀⠘⠃⠀⠀⠀⠀⠀⠀⠀⠜⠘⠁⠀⠀⡦⠆⠁⠀⣀⠀⢀⡀
 ⠀⠀⠀⠀⠀⢀⠔⠂⠈⠀⠀⡀⠀⠀⠀⠈⠀⠀⠀⠀⡆⠀⠀⢠⣀⠀⠀⢀⡀⠤⠀⡀⠀⠀⠀⡈⠀⠀⠀⠀⠀⠀⢀⡀⠀⠁⠀⠐⠦⡀
 ⠀⠀⠀⠀⠀⢇⠀⠀⣀⡠⠂⠀⠀⠀⣀⠔⠁⠀⠀⠀⠁⠠⠒⠁⠀⠈⠉⠁⠀⡐⠉⠁⠀⠀⢀⡠⡀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⢘⡄
-⠀⠀⠀⠀⠀⠀⠀⠁⠀⠁⠀⠀⣴⠉⠀⠀⠀⠁⠀⠀⡀⣀⠐⠀⠀⠀⠀⠀⢠⠀⡀⠄⠀⠀⠀⠐⡀⠉⠳⡒⠉⠒⠀⠀⠀⠃⠀⠀⠀⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠙⠤⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠈⠀⠶⠁⠉⠀⠉ 
 </pre></div>
 
     <div class="system-status">
@@ -62,6 +63,7 @@
     <div class="chat-box" id="chat-box"></div>
 
     <div class="input-bar">
+      <button id="agent-toggle" class="agent-toggle">⚙ agent: on</button>
       <span class="prompt-caret">&gt;</span>
       <textarea id="prompt" placeholder="ask gremlino anything..." rows="1"></textarea>
       <button id="send-btn" onclick="sendMessage()">&#x2192;</button>
