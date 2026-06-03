@@ -1,0 +1,44 @@
+{
+  "name": "gremlino",
+  "version": "0.3.0",
+  "description": "Local AI assistant",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win",
+    "build:all": "electron-builder --linux --win"
+  },
+  "build": {
+    "appId": "com.gremlino.app",
+    "productName": "Gremlino",
+    "directories": {
+      "output": "../dist"
+    },
+    "files": [
+      "main.js",
+      "../frontend/**/*",
+      "../backend/**/*",
+      "!../backend/venv/**/*",
+      "!../backend/data/**/*",
+      "!../**/__pycache__/**/*"
+    ],
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Utility",
+      "icon": "../frontend/icon.png"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "../frontend/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}

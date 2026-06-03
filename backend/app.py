@@ -5,6 +5,7 @@ import os
 from routes.chat import chat_bp
 from routes.system import system_bp
 from routes.sessions import sessions_bp
+from routes.models import models_bp
 
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), '..', 'frontend')
 
@@ -14,6 +15,7 @@ CORS(app)
 app.register_blueprint(chat_bp)
 app.register_blueprint(system_bp)
 app.register_blueprint(sessions_bp)
+app.register_blueprint(models_bp)
 
 @app.route('/')
 def index():
@@ -24,8 +26,4 @@ def static_files(path):
     return send_from_directory(FRONTEND_DIR, path)
 
 if __name__ == "__main__":
-    app.run(
-        host="0.0.0.0",
-        port=7000,
-        debug=True
-    )
+    app.run(host="0.0.0.0", port=7000, debug=True)

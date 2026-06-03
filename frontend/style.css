@@ -420,3 +420,130 @@ textarea#prompt::placeholder { color: var(--text-dim); }
   color: var(--text-dim);
 }
 .confirm-no:hover { background: var(--dim); color: var(--text); }
+
+/* ── File attach button ─────────────────────────────────────── */
+.attach-btn {
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-panel);
+  align-self: flex-end;
+  margin-bottom: 1px;
+  transition: border-color 0.15s;
+  user-select: none;
+  line-height: 1;
+}
+.attach-btn:hover { border-color: var(--accent2); }
+
+/* ── Attach preview bar ─────────────────────────────────────── */
+.attach-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 16px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+}
+.attach-icon { color: var(--accent2); }
+.attach-name { color: var(--text); }
+.attach-size { color: var(--text-dim); }
+.attach-clear {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 2px;
+  margin-left: auto;
+  line-height: 1;
+}
+.attach-clear:hover { color: var(--accent); }
+
+/* ── File tag in message ────────────────────────────────────── */
+.file-tag {
+  display: inline-block;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--accent2);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+/* ── Pull progress bar ──────────────────────────────────────── */
+.pull-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+}
+.pull-label { color: var(--text-dim); min-width: 160px; }
+.pull-track {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.pull-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.3s;
+}
+.pull-pct { color: var(--accent); min-width: 36px; text-align: right; }
+
+/* ── Model switcher ─────────────────────────────────────────── */
+.model-switcher {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  align-self: flex-end;
+  margin-bottom: 1px;
+}
+.model-switcher select {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 5px 6px;
+  border-radius: 2px;
+  outline: none;
+  max-width: 140px;
+  cursor: pointer;
+}
+.model-switcher select:focus { border-color: var(--accent3); }
+.model-switcher input[type="text"] {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 2px;
+  outline: none;
+  width: 150px;
+}
+.model-switcher input[type="text"]::placeholder { color: var(--text-dim); }
+.model-switcher input[type="text"]:focus { border-color: var(--accent3); }
+.model-switcher button {
+  background: var(--bg-panel);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.model-switcher button:hover { background: var(--accent3); color: var(--bg); }
