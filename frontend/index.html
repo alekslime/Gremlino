@@ -9,60 +9,58 @@
 </head>
 <body>
 
-  <!-- LEFT PANEL: header + ASCII art -->
   <div class="left-panel">
     <div class="header-box">
-      <div class="header-title">GREMLINO</div>
-      <div class="header-version">v0.1.0</div>
+      <div class="header-top">
+        <span class="header-title">GREMLINO</span>
+        <span class="header-version">v0.1.0</span>
+      </div>
+      <div class="header-rule">|</div>
       <div class="header-sub">&gt; tiny gremlin living in your computer</div>
     </div>
-
-    <div class="ascii-art" aria-hidden="true">
-<pre>
-  ....::::::::::....
-  :::  .::::::.  :::
-  ::  ::::::::::.  ::
- .:  ::::  :::::.  :.
- :.  :::    :::::  .:
- ::  ::::  :::::   ::
-  :   :::::::::::. :
-  ::   .::::::::.  :
-   :::.  ......  .::
-    ::::::::::::::::
-     ::          ::
-    ::::        ::::
-   ::::::      ::::::
-  ::::::::    ::::::::
- .:::::::::  :::::::::
- .::: ::::::::::::::::
-  ::   :::::::::::::.
-   ::.   :::::::::.
-     ::::.  ....:::
-       ::::::::::::
-        .:::::::.
-          .::::.
-           ::::
-            ::
-</pre>
-    </div>
+    <!-- sidebar/services will go here -->
   </div>
 
-  <!-- RIGHT PANEL: system status + chat -->
   <div class="right-panel">
 
-    <!-- System status (top right) -->
-    <div class="system-status" id="system-status">
-      <div class="status-title">-- SYSTEM STATUS ----+</div>
-      <div class="status-row"><span class="status-key">CPU</span><span class="status-val" id="stat-cpu">--</span></div>
-      <div class="status-row"><span class="status-key">RAM</span><span class="status-val" id="stat-ram">--</span></div>
-      <div class="status-row"><span class="status-key">MODEL</span><span class="status-val" id="stat-model">llama3.2:3b</span></div>
-      <div class="status-row"><span class="status-key">UPTIME</span><span class="status-val" id="stat-uptime">--</span></div>
+    <!-- Big faded gremlin watermark on chat background -->
+    <div class="chat-watermark" aria-hidden="true"><pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡤
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⢨⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠
+⠀⠀⠀⠀⠀⠀⠀⠀⡘⢆⠈⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠔⠊⠁⠆⠀⠀⠀⠀⠀⠉⠢⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠀⡠⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠇⠀⠀⠀⠡⡀⠀⠀⠀⠀⠀⠀⢀⡴⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠱⡄⠀⠀⠀⠀⠀⠀⠀⢀⠔⠉⠀⠄⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠄⠈⠢⢄⠀⠀⠀⢠⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠀⠀⠀⢀⡠⠂⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⡄⠀⠀⠀⠢⡀⠀⢑⡦⠠⢇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠦⠐⠊⠁⠀⢀⠔⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢄⠀⠀⠀⠰⠐⠏⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠄⠀⠀⡀⠀⢀⡔⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⡀⠀⠀⣿⡄⠘⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠊⠀⠀⠀⡀⠁⣴⣿⠃
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⡐⠺⠿⠀⡿⢋⣵⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣶⠁⠁⠘⠛⠋⠀⠀⡠
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢠⠈⠀⠃⢸⣿⣿⣣⡀⠀⠀⢀⠀⠀⠀⠀⢀⣠⣾⡄⠈⡇⠀⠀⠀⡀⠄⠒⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠈⢌⠻⢿⣿⠷⣤⠠⠈⠄⡀⢀⣴⣾⣿⣿⠇⠀⠀⠀⠀⠋
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⢦⡀⠀⠀⠁⠒⠒⠀⠀⠀⠀⠀⠀⠉⠪⠝⠛⠁⠀⠀⠀⠀⠀⡌
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠙⢦⡙⢶⣤⢀⠀⠑⠄⠀⠀⠂⠀⠀⣀⣀⣤⡤⠀⢀⡠⠊
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⢈⡄⠀⠀⠑⢄⠻⣼⠷⣦⣄⣀⣀⣤⣴⣸⡿⠟⠁⣀⠔⢊⠇⠀⠠⡀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⠁⠀⠀⠁⠀⠀⠀⢨⣷⡙⠀⣸⡋⠙⠉⣋⠿⠋⢀⡴⠋⠁⠀⡞⠀⠀⠀⠈
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠉⠙⠦⣄⣈⠉⠉⢀⣀⠔⠉⠀⠀⠀⠀⢹⠀⠀⠀⢀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⡀⠄⠀⠀⠀⠐⠉⠃⡀⠀⠀⠉⠉⠉⠉⠀⡤⢚⠆⣠⠂⠀⠸⠀⢀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠤⢇⠀⠀⠀⠀⢰⠀⠘⠃⠀⠀⠀⠀⠀⠀⠀⠜⠘⠁⠀⠀⡦⠆⠁⠀⣀⠀⢀⡀
+⠀⠀⠀⠀⠀⢀⠔⠂⠈⠀⠀⡀⠀⠀⠀⠈⠀⠀⠀⠀⡆⠀⠀⢠⣀⠀⠀⢀⡀⠤⠀⡀⠀⠀⠀⡈⠀⠀⠀⠀⠀⠀⢀⡀⠀⠁⠀⠐⠦⡀
+⠀⠀⠀⠀⠀⢇⠀⠀⣀⡠⠂⠀⠀⠀⣀⠔⠁⠀⠀⠀⠁⠠⠒⠁⠀⠈⠉⠁⠀⡐⠉⠁⠀⠀⢀⡠⡀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⢘⡄
+⠀⠀⠀⠀⠀⠀⠀⠁⠀⠁⠀⠀⣴⠉⠀⠀⠀⠁⠀⠀⡀⣀⠐⠀⠀⠀⠀⠀⢠⠀⡀⠄⠀⠀⠀⠐⡀⠉⠳⡒⠉⠒⠀⠀⠀⠃⠀⠀⠀⠁
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠙⠤⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠈⠀⠶⠁⠉⠀⠉
+</pre></div>
+
+    <div class="system-status">
+      <div class="status-header">-- SYSTEM STATUS ----+</div>
+      <div class="status-row"><span class="sk">CPU</span><span class="sv" id="stat-cpu">--</span></div>
+      <div class="status-row"><span class="sk">RAM</span><span class="sv" id="stat-ram">--</span></div>
+      <div class="status-row"><span class="sk">MODEL</span><span class="sv" id="stat-model">llama3.2:3b</span></div>
+      <div class="status-row"><span class="sk">UPTIME</span><span class="sv" id="stat-uptime">--</span></div>
+      <div class="status-footer">+--------------------+</div>
     </div>
 
-    <!-- Chat messages -->
     <div class="chat-box" id="chat-box"></div>
 
-    <!-- Input bar -->
     <div class="input-bar">
       <span class="prompt-caret">&gt;</span>
       <textarea id="prompt" placeholder="ask gremlino anything..." rows="1"></textarea>
