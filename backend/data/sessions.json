@@ -1,60 +1,9 @@
 {
-  "87eca242": {
-    "id": "87eca242",
-    "name": "hello",
-    "created_at": 1780479664.4476295,
-    "updated_at": 1780479713.9981947,
-    "messages": [
-      {
-        "role": "user",
-        "content": "hello",
-        "time": 1780479669.568425
-      },
-      {
-        "role": "bot",
-        "content": "what can i help you with?",
-        "time": 1780479675.6736894
-      },
-      {
-        "role": "user",
-        "content": "how much is my ram usage?",
-        "time": 1780479690.6998818
-      },
-      {
-        "role": "bot",
-        "content": "free -m | grep Mem",
-        "time": 1780479692.115799
-      },
-      {
-        "role": "user",
-        "content": "tell me how much is it",
-        "time": 1780479699.345188
-      },
-      {
-        "role": "bot",
-        "content": "12%",
-        "time": 1780479700.4737089
-      },
-      {
-        "role": "user",
-        "content": "whats that in gb?",
-        "time": 1780479706.2990391
-      },
-      {
-        "role": "bot",
-        "content": "free -m | awk '$3 == \"Mem\" {print $2/1024}'",
-        "time": 1780479708.7309554
-      },
-      {
-        "role": "user",
-        "content": "then tell me?",
-        "time": 1780479710.9691157
-      },
-      {
-        "role": "bot",
-        "content": "free -m | awk '$3 == \"Mem\" {print $2/1024}' \n= 12.125",
-        "time": 1780479713.9981935
-      }
-    ]
+  "27ca798c": {
+    "id": "27ca798c",
+    "name": "session-27ca798c",
+    "created_at": 1780482510.0953104,
+    "updated_at": 1780482510.0953104,
+    "messages": []
   }
 }
